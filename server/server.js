@@ -3,18 +3,13 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
-const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '..', 'src')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'src', 'index.html'));
-});
-
+// API для прийому форми
 app.post('/proxy', async (req, res) => {
   const { name, phone, message, formType, age } = req.body;
 
@@ -41,5 +36,5 @@ app.post('/proxy', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Сервер запущено: http://localhost:${PORT}`);
+  console.log(`Сервер запущено на порті ${PORT}`);
 });
