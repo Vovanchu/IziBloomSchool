@@ -9,7 +9,7 @@ document.querySelector('form').addEventListener('submit', async (e) => {
   const formType = form.getAttribute('data-form-type') || 'Форма без типу';
 
   try {
-    const response = await fetch('/proxy', {
+    const response = await fetch('https://izibloomschool.onrender.com/proxy', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, phone, message, age, formType }),
