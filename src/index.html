@@ -18,9 +18,10 @@
   <meta name="author" content="iziBloom School" />
   <meta name="robots" content="index, follow" />
 
+
   <!-- Favicon -->
-  <link rel="icon" href="/images/logo-cat.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/images/logo-cat.png" />
+  <link rel="icon" href="./images/logo-cat.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="./images/logo-cat.png" />
 
   <!-- Шрифти -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,12 +29,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="./styles/main.css" />
 
   <!-- Open Graph (для соцмереж) -->
   <meta property="og:title" content="iziBloom – Онлайн школа англійської мови" />
   <meta property="og:description" content="Сучасне навчання англійської онлайн. Перший урок безкоштовний!" />
-  <meta property="og:image" content="https://www.izibloomschool.com/images/og-image.jpg" />
+  <meta property="og:image" content="https://www.izibloomschool.com/images/og-image.png" />
   <meta property="og:url" content="https://www.izibloomschool.com" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="iziBloom School" />
@@ -42,7 +43,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="iziBloom – Онлайн школа англійської мови" />
   <meta name="twitter:description" content="Сучасне навчання англійської онлайн. Перший урок безкоштовний!" />
-  <meta name="twitter:image" content="https://www.izibloomschool.com/images/og-image.jpg" />
+  <meta name="twitter:image" content="https://www.izibloomschool.com/images/og-image.png" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://www.izibloomschool.com" />
@@ -162,8 +163,9 @@
         <h2>Записатися на пробний урок</h2>
         <form class="tg-form" data-form-type="Пробне заняття" action="#" method="POST">
           <input type="text" name="name" class="form-input" placeholder="Ім'я" required />
-          <input type="number" name="age" class="form-input" placeholder="Вік" required />
-          <input type="tel" name="phone" class="form-input" placeholder="Телефон" required />
+          <input type="number" name="age" class="form-input" placeholder="Вік" required min="1" max="120" />
+          <input type="tel" name="phone" class="form-input" placeholder="Телефон" required pattern="\d+"
+            title="Вводьте тільки цифри" />
           <textarea name="message" class="form-input" placeholder="Повідомлення"></textarea>
           <button type="submit" class="form-button">Записатися</button>
         </form>
@@ -335,7 +337,8 @@
         <h2>Написати питання</h2>
         <form class="tg-form" data-form-type="Запитання" action="#" method="POST">
           <input type="text" name="name" class="form-input" placeholder="Ім'я" required />
-          <input type="tel" name="phone" class="form-input" placeholder="Телефон" required />
+          <input type="tel" name="phone" class="form-input" placeholder="Телефон" required pattern="\d+"
+            title="Вводьте тільки цифри" />
           <textarea name="message" class="form-input" placeholder="Повідомлення"></textarea>
           <button type="submit" class="form-button">Надіслати</button>
         </form>
@@ -388,8 +391,9 @@
         <h2>Хочеш стати викладачем?</h2>
         <form class="tg-form" data-form-type="Вакансія" action="#" method="POST">
           <input type="text" name="name" class="form-input" placeholder="Ім'я" required />
-          <input type="number" name="age" class="form-input" placeholder="Вік" required />
-          <input type="tel" name="phone" class="form-input" placeholder="Телефон" required />
+          <input type="number" name="age" class="form-input" placeholder="Вік" required min="1" max="120" />
+          <input type="tel" name="phone" class="form-input" placeholder="Телефон" required pattern="\d+"
+            title="Вводьте тільки цифри" />
           <select name="message" class="form-input" required>
             <option value="" disabled selected>Оберіть рівень досвіду</option>
             <option value="Початківець">Початківець</option>
@@ -483,6 +487,7 @@
 
   <script src="./js/index.js"></script>
   <script src="./js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

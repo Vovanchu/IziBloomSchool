@@ -8,9 +8,10 @@ const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors()); // додай це!
+app.use(cors());
 app.use(bodyParser.json());
 
+// Обробка форми
 app.post('/proxy', async (req, res) => {
   const { name, phone, message, formType, age } = req.body;
 
@@ -38,4 +39,5 @@ app.post('/proxy', async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`Visit http://localhost:${PORT} to access the app`);
 });

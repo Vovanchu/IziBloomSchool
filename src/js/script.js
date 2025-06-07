@@ -1,39 +1,41 @@
-document.querySelector('form').addEventListener('submit', async (e) => {
-  e.preventDefault();
+document.querySelectorAll('form.tg-form').forEach(form => {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  const form = e.target;
-  const name = form.querySelector('input[name="name"]').value;
-  const phone = form.querySelector('input[name="phone"]').value;
-  const message = form.querySelector('textarea[name="message"]')?.value || '';
-  const age = form.querySelector('input[name="age"]')?.value || '';
-  const formType = form.getAttribute('data-form-type') || 'Форма без типу';
+    const name = form.querySelector('input[name="name"]').value.trim();
+    const phone = form.querySelector('input[name="phone"]').value.trim();
 
-  try {
-    const response = await fetch('https://www.izibloomschool.com/proxy', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, phone, message, age, formType }),
-    });
+    if (!name || !phone) {
+      Swal.fire('Помилка', 'Ім’я і телефон обов’язкові', 'error');
+      return;
+    }
 
-    const responseText = await response.text();
-    console.log('Raw response text:', responseText);
+    const messageField = form.querySelector('textarea[name="message"]') || form.querySelector('select[name="message"]');
+    const message = messageField ? messageField.value.trim() : '';
 
-    let data;
+    const ageInput = form.querySelector('input[name="age"]');
+    const age = ageInput ? ageInput.value.trim() : '';
+
+    const formType = form.getAttribute('data-form-type') || 'Форма без типу';
+
     try {
-      data = JSON.parse(responseText);
-    } catch {
-      throw new Error('Невірний формат відповіді від сервера');
+      const response = await fetch('https://www.izibloomschool.com/proxy', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, message, age, formType }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Сталася помилка');
+      }
+
+      Swal.fire('Успіх', data.message, 'success');
+      form.reset();
+
+    } catch (err) {
+      Swal.fire('Помилка', err.message, 'error');
     }
-
-    if (!response.ok) {
-      throw new Error(data.message || `Помилка сервера: ${response.status}`);
-    }
-
-    alert(data.message);
-    form.reset();
-
-  } catch (err) {
-    console.error('Fetch error:', err);
-    alert(err.message || 'Сталася помилка при відправці форми. Спробуйте пізніше.');
-  }
+  });
 });
