@@ -1,0 +1,105 @@
+.window {
+  &-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+
+    &-content {
+      background: #fff;
+      padding: 20px;
+      width: 350px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Кнопка закриття */
+    &-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input,
+    textarea,
+    select { /* Додаємо стилізацію для select */
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 12px 16px;
+      margin: 0 auto;
+
+      width: 272px;
+      min-width: 240px;
+      height: 40px;
+
+      background: #ffffff;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+
+      resize: vertical;
+    }
+
+    select {
+      appearance: none; /* Видаляємо стандартний стиль браузера */
+      background: url('data:image/svg+xml;utf8,<svg fill="%23333" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 12px center;
+      background-size: 16px;
+      padding-right: 36px; /* Додаємо відступ для стрілки */
+    }
+
+    select:focus {
+      border-color: #152064;
+      outline: none;
+      box-shadow: 0 0 5px rgba(21, 32, 100, 0.5);
+    }
+
+    .form-button {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+      gap: 8px;
+      margin: 0 auto;
+
+      width: 272px;
+      height: 40px;
+
+      background: #152064;
+      border: 1px solid #2c2c2c;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+      &:hover {
+        background: #1b2a80;
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+}

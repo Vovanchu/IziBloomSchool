@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles/main.css" />
+
+  <title>iziBloom – Онлайн школа англійської мови</title>
+  <link rel="icon" href="./images/logo-cat.png" type="image/png">
+
+  <meta name="description"
+    content="iziBloom – сучасна онлайн школа англійської мови. Перший урок безкоштовний. Вивчай англійську з комфортом!" />
+  <meta name="keywords"
+    content="англійська онлайн, онлайн школа англійської, iziBloom, репетитор англійської, English for kids, англійська для дітей" />
+  <meta name="author" content="iziBloom School" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header_wrapper">
+      <!-- Логотип по ліву сторону -->
+      <div class="header_logo">
+        <a href="#" class="header_logo_link">
+          <img src="./images/logo-cat.png" alt="logo-cat" class="header_logo_cat header_logo_img" />
+          <img src="./images/logo-name.png" alt="logo-name" class="header_logo_name header_logo_img" />
+        </a>
+      </div>
+
+      <!-- Бургер-меню -->
+      <div class="burger" id="burger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Меню навігації по правій стороні (приховане на мобільних) -->
+      <div class="header_nav">
+        <ul class="header_nav_list">
+          <li class="header_nav_item">
+            <a href="#studying" class="header_nav_item_link">Напрямки</a>
+          </li>
+          <li class="header_nav_item">
+            <a href="#free_lesson" class="header_nav_item_link">Пробний урок</a>
+          </li>
+          <li class="header_nav_item">
+            <a href="#price" class="header_nav_item_link">Вартість</a>
+          </li>
+
+          <li>
+            <a href="tel:0672903393" class="header_nav_item_link">067 290 33 93</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Вікно навігації-->
+  <div class="menu" id="menu">
+    <div class="menu_content">
+      <span class="menu_close" onclick="closeMenu()">&times;</span>
+      <ul class="menu_nav_list">
+        <li class="menu_nav_item">
+          <a href="#studying" class="menu_nav_item_link">Напрямки</a>
+        </li>
+        <li class="menu_nav_item">
+          <a href="#free_lesson" class="menu_nav_item_link">Пробний урок</a>
+        </li>
+        <li class="menu_nav_item">
+          <a href="#price" class="menu_nav_item_link">Вартість</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <section class="about_us" id="about_us">
+      <h1 class="about_us-title title-h1">Англійська мова для всіх</h1>
+      <p class="about_us-descriptions">iziBloom-онлайн школа</p>
+      <p class="about_us-descriptions">
+        Ваша англійська буде розцвітати, адже Bloom - цвісти!
+      </p>
+      <p class="about_us-descriptions">
+        Досягай найкращих результатів з нами!
+      </p>
+    </section>
+
+    <section class="free_lesson" id="free_lesson">
+      <div class="free_lesson-container">
+        <h1 class="free_lesson-title title-h1">Безкоштовний урок</h1>
+        <p class="free_lesson-descriptions">
+          Пробне безкоштовне заняття 30 хв для знайомства з викладачем та
+          обговорення всіх деталей
+        </p>
+        <a href="#" id="openModal" class="free_lesson-link typography-link">
+          Записатися на <br />пробний урок
+        </a>
+      </div>
+    </section>
+
+    <!-- Модальне вікно пробне заняття -->
+    <div id="modal" class="window-modal">
+      <div class="window-modal-content">
+        <span class="window-modal-close" id="close-modal">&times;</span>
+        <h2>Записатися на пробний урок</h2>
+        <form class="tg-form" data-form-type="Пробне заняття" action="#" method="POST">
+          <input type="text" name="name" class="form-input" placeholder="Ім'я" required />
+          <input type="number" name="age" class="form-input" placeholder="Вік" required />
+          <input type="tel" name="phone" class="form-input" placeholder="Телефон" required />
+          <textarea name="message" class="form-input" placeholder="Повідомлення"></textarea>
+          <button type="submit" class="form-button">Записатися</button>
+        </form>
+      </div>
+    </div>
+
+    <section id="studying" class="studying">
+      <div class="studying-wrap">
+        <h1 class="studying-title title-h1">Різні напрямки навчання</h1>
+        <div class="studying-list">
+          <div class="studying-item">
+            <img src="./images/icons/styding/ENGbook.svg" alt="English book" />
+            <h3 class="typography-subtitle">
+              Для початківців: навчання з нуля
+            </h3>
+            <p class="">
+              Ти опануєш основи граматики і розшириш свій словниковий запас
+            </p>
+          </div>
+          <div class="studying-item">
+            <img src="./images/icons/styding/laptop.svg" alt="laptop" />
+            <h3 class="typography-subtitle">
+              Для діток: цікаве навчання з іграми
+            </h3>
+            <p class="">
+              Вивчайте нові знання через гру. Дітки захоплюються і не
+              відволікаються
+            </p>
+          </div>
+          <div class="studying-item">
+            <img src="./images/icons/styding/book.svg" alt="book" />
+            <h3>НМТ / ЗНО: підготовка з успіхом</h3>
+            <p>Підготовка, яка відкриває двері до вищої освіти</p>
+          </div>
+          <div class="studying-item">
+            <img src="./images/icons/styding/lamp.svg" alt="lamp" />
+            <h3>Для школярів: допомога з домашнім завданням</h3>
+            <p>
+              Домашнє завдання простіше і зрозуміліше з нами. Ми допоможемо зі
+              шкільною програмаю
+            </p>
+          </div>
+          <div class="studying-item">
+            <img src="./images/icons/styding/PC.svg" alt="PC" />
+            <h3>Для дорослих: продуктивне та цікаве навчання</h3>
+            <p>
+              Пактикуй мовлення, слухання, читання і граматику. Зробіть свій
+              професійний шлях ще цікавішим
+            </p>
+          </div>
+          <div class="studying-item">
+            <img src="./images/icons/styding/location.svg" alt="Location" />
+            <h3>Загальна англійська: корисний розвиток</h3>
+            <p>
+              Вдосконалиш свій рівень, покращиш граматику, подолаєш мовний
+              бар'єр. Зможеш спілкуватися на будь-які теми
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="price_of_Lesson" id="price">
+      <div class="wrap_price_of_Lesson">
+        <h1 class="price_of_Lesson-title title-h1">Вартість уроків</h1>
+
+        <div class="container_of_card">
+          <!-- left card -->
+          <div class="container_of_card-individualLesson">
+            <h3 class="container_of_card-individualLesson_title typography-subtitle">
+              Індивідуальні заняття
+            </h3>
+            <p class="container_of_card-individualLesson_price">
+              <span>370</span> грн / <small>за урок</small>
+            </p>
+          </div>
+
+          <!-- right card -->
+          <div class="container_of_card-duetLesson">
+            <h3 class="container_of_card-duetLesson_title typography-subtitle">
+              Парні заняття
+            </h3>
+            <p class="container_of_card-duetLesson_price">
+              <span>275</span> грн / <small>з людини</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="our_benefits" id="our_benefits">
+      <div class="benefits-wrapper">
+        <h1 class="our_benefits-title title-h1">Наші переваги</h1>
+
+        <div class="box_benefits">
+          <p class="box_benefits-item1 box_benefits-item">
+            Вивчення англійської мови онлайн — це зручно та
+            цікаво!Індивідуальні уроки допоможуть швидше подолати страх
+            спілкування таотримати знання в комфортній атмосфері.
+          </p>
+          <p class="box_benefits-item2 box_benefits-item">
+            Зосередившись на своїх інтересах і потребах, ви швидко
+            досягнетезначних результатів. У нашій школі індивідуальний підхід
+            допоможевам розвиватися у власному темпі.
+          </p>
+          <p class="box_benefits-item3 box_benefits-item">
+            Не витрачайте час — оберіть ідеальну атмосферу для навчання,
+            депідтримка викладача зробить процес вивчення ефективнішим
+            іприємнішим! Розпочніть свою мовну подорож вже сьогодні!
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap_our_benefits-list">
+        <ul class="our_benefits-list">
+          <li class="our_benefits-list-item">
+            <img src="./images/icons/benefits/light.svg" alt="" class="our_benefits-list-item-img" />
+            <h2 class="our_benefits-list-item-title typography-subtitle">
+              Інтерактивні матеріали
+            </h2>
+            <ul>
+              <li class="items">відео</li>
+              <li class="items">аудіо</li>
+              <li class="items">ігри</li>
+            </ul>
+          </li>
+          <li class="our_benefits-list-item">
+            <img src="./images/icons/benefits/trumpet.svg" alt="" class="our_benefits-list-item-img" />
+            <h2 class="our_benefits-list-item-title typography-subtitle">
+              Покращення
+            </h2>
+            <ul>
+              <li class="items">граматики</li>
+              <li class="items">говоріння</li>
+              <li class="items">сприйняття на слух</li>
+              <li class="items">читання</li>
+            </ul>
+          </li>
+          <li class="our_benefits-list-item">
+            <img src="./images/icons/benefits/book.svg" alt="" class="our_benefits-list-item-img" />
+            <h2 class="our_benefits-list-item-title typography-subtitle">
+              Підбір матеріалів індивідуально
+            </h2>
+            <ul>
+              <li class="items">вчимося за нашими матеріалами</li>
+              <li class="items">вчимося за вашими підручниками</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="question">
+      <div class="question-wrapper">
+        <h1 class="question-title title-h1">Виникли питання?</h1>
+        <p class="question-descriptions">
+          Пишіть нам і отримайте відповідь найближчим часом
+        </p>
+        <div class="question-button">
+          <a href="#" id="question_modal" class="question-button-link typography-link">Написати питання</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Модальне вікно питання -->
+    <div id="modal2" class="window-modal">
+      <div class="window-modal-content">
+        <span class="window-modal-close" id="close-modal2">&times;</span>
+        <h2>Написати питання</h2>
+        <form class="tg-form" data-form-type="Запитання" action="#" method="POST">
+          <input type="text" name="name" class="form-input" placeholder="Ім'я" required />
+          <input type="tel" name="phone" class="form-input" placeholder="Телефон" required />
+          <textarea name="message" class="form-input" placeholder="Повідомлення"></textarea>
+          <button type="submit" class="form-button">Надіслати</button>
+        </form>
+      </div>
+    </div>
+
+    <!--<section class="feedback">
+
+        <h2 class="feedback-title">Відгуки</h2>
+        <div class="feedback-container">
+          <div class="feedback-item">
+            Доброго дня.Задоволені роботою вашої команди.До сучасних підлітків
+            важко знайти підхід,а вам це вдається. Сину подобається заняття з
+            англійськоїмови.За короткий час є результат.Дуже пасує графік та
+            ваше ставлення до непередбачених ситуацій Гарних вам учнів,
+            здоровʼя та миру.Надалі залишаємося з вами 💙💛
+          </div>
+          <div class="feedback-item">
+            Назар дуже полюбив англійську! Викладачка дуже терпляча і вміє
+            зацікавити дитину навіть у складних темах. ☺️🥰
+          </div>
+          <div class="feedback-item">
+            Дякую. Йому подобається займатись. Йому дуже зайшла Ілона)) 💕
+          </div>
+          <div class="feedback-item">
+            Обслуговування дуже приємне, буду замовляти ще.
+          </div>
+        </div>
+      </section>-->
+
+    <section class="vacancy_of_teacher" id="vacancy_of_teacher">
+      <div class="vacancy_of_teacher-wrap">
+        <h1 class="vacancy_of_teacher-title title-h1">Вакансія викладача</h1>
+        <p class="vacancy_of_teacher-descriptions">
+          Якщо ви зацікавлені приєднатися до нашої команди та стати частиною
+          професійного колективу, заповнюйте анкету.
+        </p>
+        <div class="vacancy_of_teacher-button">
+          <a href="" id="vacancy_modal" class="vacancy_of_teacher-button-link typography-link">
+            Заповнити
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Модальне вікно викладача -->
+    <div id="modal3" class="window-modal">
+      <div class="window-modal-content">
+        <span class="window-modal-close" id="close-modal3">&times;</span>
+        <h2>Хочеш стати викладачем?</h2>
+        <form class="tg-form" data-form-type="Вакансія" action="#" method="POST">
+          <input type="text" name="name" class="form-input" placeholder="Ім'я" required />
+          <input type="number" name="age" class="form-input" placeholder="Вік" required />
+          <input type="tel" name="phone" class="form-input" placeholder="Телефон" required />
+          <select name="message" class="form-input" required>
+            <option value="" disabled selected>Оберіть рівень досвіду</option>
+            <option value="Початківець">Початківець</option>
+            <option value="Середній рівень">Середній рівень</option>
+            <option value="Досвідчений">Досвідчений</option>
+          </select>
+          <button type="submit" class="form-button">Відправити</button>
+        </form>
+      </div>
+    </div>
+
+    <a href="tel:+380672903393" class="call-button">
+      <img src="./images/icons/footer_socials/phone.svg" alt="Phone" />
+    </a>
+  </main>
+
+  <footer class="footer">
+    <div class="footer_wrap">
+      <div class="footer_logo">
+        <a href="#" class="header_logo_link">
+          <img src="./images/logo-cat.png" alt="logo-cat" class="header_logo_cat header_logo_img" />
+          <img src="./images/logo-name.png" alt="logo-name" class="header_logo_name header_logo_img" />
+          <p class="footer_logo_descriptions">Мовна школа</p>
+        </a>
+      </div>
+
+      <div class="footer_nav">
+        <h3 class="footer_nav-title">Навігація</h3>
+        <ul class="footer_nav_list">
+          <li class="footer_nav_item">
+            <a href="#free_lesson" class="footer_nav_item-link">
+              <h3 class="footer_nav_item-title">Пробний урок</h3>
+            </a>
+          </li>
+          <li class="footer_nav_item">
+            <a href="#our_benefits" class="footer_nav_item-link">
+              <h3 class="footer_nav_item-title">Напрямки</h3>
+            </a>
+          </li>
+          <li class="footer_nav_item">
+            <a href="#price" class="footer_nav_item-link">
+              <h3 class="footer_nav_item-title">Вартість</h3>
+            </a>
+          </li>
+          <li class="footer_nav_item">
+            <a href="#vacancy_of_teacher" class="footer_nav_item-link">
+              <h3 class="footer_nav_item-title">Вакансія для викладачів</h3>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer_socials">
+        <h3 class="footer_socials-title">Соціальні мережі</h3>
+        <ul class="footer_socials_list">
+          <li class="footer_socials_item">
+            <a href="https://www.instagram.com/izibloom?igsh=a3UwNThqd3d2bmR4&utm_source=qr">
+              <img src="./images/icons/footer_socials/instagram.svg" alt="" class="footer_socials_item-img" />
+            </a>
+          </li>
+          <li class="footer_socials_item">
+            <a href="https://t.me/dhritsay">
+              <img src="./images/icons/footer_socials/telegram.svg" alt="" class="footer_socials_item-img" />
+            </a>
+          </li>
+          <li class="footer_socials_item">
+            <a href="#">
+              <img src="./images/icons/footer_socials/facebook.svg" alt="" class="footer_socials_item-img" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer_contact">
+        <h3 class="footer_contact-title">Контакти</h3>
+        <ul class="footer_contact_list">
+          <li class="footer_contact_item">
+            <a href="tel:+380 (67) 290 33 93" class="footer_contact_item_link">
+              <img src="./images/icons/footer_socials/phone.svg" alt="" class="footer_contact_item-img" />
+              (067) 290 33 93</a>
+          </li>
+          <li class="footer_contact_item">
+            <a href="tel:+380 (67) 800 53 02" class="footer_contact_item_link">
+              <img src="./images/icons/footer_socials/phone.svg" alt="" class="footer_contact_item-img" />
+              (067) 800 53 02</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/index.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

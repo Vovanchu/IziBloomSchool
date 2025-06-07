@@ -1,0 +1,291 @@
+@import "_vars";
+@import "_mixins";
+
+.header {
+  padding: 0;
+  width: 100vw;
+  height: 55px;
+  box-sizing: border-box;
+  background-color: $c-main-blue;
+  transition: opacity var(--transition-delay) ease-in-out;
+  
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  &_wrapper {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  &_logo {
+    display: flex;
+    flex-direction: row;
+
+    &_cat {
+      width: 55px;
+      height: 50px;
+    }
+
+    &_name {
+      width: 100px;
+      height: auto;
+    }
+
+    @include on-tablet {
+      &_cat {
+        width: 70px;
+        height: 60px;
+      }
+
+      &_name {
+        width: 150px;
+      }
+    }
+
+    @include on-small-desktop {
+      &_cat {
+        width: 80px;
+        height: 70px;
+      }
+
+      &_name {
+        width: 200px;
+      }
+    }
+
+    @include on-desktop {
+      &_cat {
+        width: 90px;
+        height: 80px;
+      }
+
+      &_name {
+        width: 250px;
+      }
+    }
+
+    @include on-large-desktop {
+      &_cat {
+        width: 100px;
+        height: 90px;
+      }
+
+      &_name {
+        width: 300px;
+      }
+    }
+
+    @include on-extra-large {
+      &_cat {
+        width: 110px;
+        height: 100px;
+      }
+
+      &_name {
+        width: 350px;
+      }
+    }
+
+    @include on-4k {
+      &_cat {
+        width: 120px;
+        height: 110px;
+      }
+
+      &_name {
+        width: 400px;
+      }
+    }
+  }
+
+  &_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5% 0 0;
+
+    &_list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+    }
+
+    &_item {
+      margin: 0 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &_link {
+        position: relative;
+        display: inline-block;
+        color: white;
+        transition: color var(--transition-delay-txt) ease-out;
+
+        &::after,
+        &::before {
+          content: "";
+          display: block;
+          width: 0;
+          height: 3px;
+          background-color: #A8DADC;
+          transition: width var(--transition-delay-txt) ease-out;
+        }
+        &::before {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+
+        &:hover {
+          color: #4C7CC1;
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @include on-tablet {
+    height: 70px;
+  }
+
+  @include on-small-desktop {
+    height: 80px;
+  }
+
+  @include on-desktop {
+    height: 90px;
+  }
+
+  @include on-large-desktop {
+    height: 120px;
+  }
+
+  @include on-extra-large {
+    height: 120px;
+  }
+
+  @include on-4k {
+    height: 170px;
+  }
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+
+  @include on-tablet {
+    width: 35px;
+    height: 30px;
+  }
+
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white; /* Білий колір для бургер-меню */
+  border-radius: 5px;
+}
+
+/* Модальне вікно */
+.menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.97); /* Початково трохи зменшене */
+  transition: all var(--transition-delay) ease-out;
+
+  z-index: 1000;
+}
+
+.menu.active {
+  display: flex;
+  opacity: 1;
+  transform: scale(1); /* Плавне розширення */
+}
+
+.menu_content {
+  background-color: white; /* Білий фон для модального вікна */
+  right: 20px;
+  top: 60px;
+  padding: 15px 5px;
+  width: 137px;
+  border-radius: 5px;
+  text-align: center;
+  position: fixed;
+
+  animation: fadeIn var(--transition-delay) ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu_close {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.menu_nav_list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu_nav_item {
+  margin: 5px;
+  padding: 9px;
+
+  box-shadow: (0px 1px 1px rgba(0, 0, 0, 0.25));
+
+  &_link {
+    color: black;
+  }
+}
+
+@media (max-width: $header_nav_width_opacity1) {
+  .header_nav {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+}

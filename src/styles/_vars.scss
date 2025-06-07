@@ -1,0 +1,26 @@
+$c-main-blue: #152064;
+$c-background: #ccd5ef;
+$c-red: #981518;
+$c-dark: #000;
+$button-link: #283272;
+$button-link-hover: #5E71DC;
+$button-link-hover-txt: #fff;
+$red_button: #930000;
+$c-darck-charcoal: #333;
+
+
+$on-mobile: 320px;
+$on-small-mobile: 480px;
+$on-tablet: 640px;
+$on-small-desktop: 1024px;
+$on-desktop: 1280px;
+$on-large-desktop: 1440px;
+$on-extra-large: 1920px;
+$on-4k: 2560px;
+$header_nav_width_opacity1: $on-small-desktop - 1;
+
+
+:root {
+  --transition-delay: 0.5s;
+  --transition-delay-txt: 0.2s;
+}

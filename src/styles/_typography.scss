@@ -1,0 +1,597 @@
+@import "_vars";
+@import "_mixins";
+
+// Загальні міксини для повторюваних властивостей шрифту
+@mixin font-inter($weight, $size, $line-height, $color) {
+  font-family: Inter, sans-serif; // Встановлює сімейство шрифтів Inter
+  font-style: normal; // Встановлює стиль шрифту normal
+  font-weight: $weight; // Встановлює вагу шрифту на задане значення
+  font-size: $size; // Встановлює розмір шрифту на задане значення
+  line-height: $line-height; // Встановлює висоту рядка на задане значення
+  color: $color; // Встановлює колір тексту на задане значення
+}
+
+@mixin font-inter-center($weight, $size, $line-height, $color) {
+  @include font-inter($weight, $size, $line-height, $color); // Включає міксин font-inter
+  text-align: center; // Центрує текст
+}
+
+h1,
+.title-h1 {
+  @include on-tablet {
+    font-size: 2rem;
+  }
+
+  @include on-small-desktop {
+    font-size: 2.25rem;
+  }
+
+  @include on-desktop {
+    font-size: 2rem;
+  }
+
+  @include on-large-desktop {
+    font-size: 2.25rem;
+  }
+
+  @include on-4k {
+    font-size: 2.5rem;
+  }
+}
+
+
+.header {
+  &_nav_item_link {
+    @include font-inter-center(200, 1rem, 40px, #fff);
+  }
+
+  @include on-desktop {
+    &_nav_item_link {
+      font-size: 1.25rem;
+    }
+  }
+
+  @include on-large-desktop {
+    &_nav_item_link {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include on-4k {
+    &_nav_item_link {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+@include on-tablet {
+  .menu {
+    &_nav_item_link {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.about_us {
+  @include font-inter(800, 1.25rem, 22px, $c-dark);
+
+  &-descriptions {
+    @include font-inter(800, 1.25rem, 22px, $c-red);
+  }
+
+  @include on-small-desktop {
+    &-title {
+      font-size: 2.75rem;
+    }
+
+    &-descriptions {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include on-desktop {
+    &-title {
+      font-size: 2.25rem;
+    }
+
+    &-descriptions {
+      font-size: 1.75rem;
+    }
+  }
+
+  @include on-large-desktop {
+    &-title {
+      font-size: 3.5rem;
+    }
+
+    &-descriptions {
+      font-size: 2rem;
+    }
+  }
+
+  @include on-4k {
+    &-title {
+      font-size: 3.5rem;
+    }
+
+    &-descriptions {
+      font-size: 2.25rem;
+    }
+  }
+}
+
+.free_lesson {
+  @include font-inter(800, 1.25rem, 22px, $c-dark);
+
+  &-descriptions {
+    @include font-inter(400, 0.875rem, 1.25rem, $c-dark);
+  }
+
+  &-link {
+    @include font-inter-center(400, 1rem, 1rem, #fff);
+  }
+
+  @include on-tablet {
+    &-title {
+      font-size: 2rem;
+    }
+
+    &-descriptions {
+      font-size: 1rem;
+    }
+
+    &-link {
+      font-size: 1.25rem;
+    }
+  }
+
+  @include on-small-desktop {
+    &-title {
+      font-size: 2.25rem;
+    }
+
+    &-descriptions {
+      font-size: 1.25rem;
+    }
+
+    &-link {
+      font-size: 1.5rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  @include on-desktop {
+    &-title {
+      font-size: 2rem;
+    }
+
+    &-descriptions {
+      font-size: 1rem;
+    }
+
+    &-link {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  @include on-large-desktop {
+    &-title {
+      font-size: 2.25rem;
+    }
+
+    &-descriptions {
+      font-size: 1.25rem;
+    }
+
+    &-link {
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  @include on-4k {
+    &-title {
+      font-size: 2.5rem;
+    }
+
+    &-descriptions {
+      font-size: 1.5rem;
+    }
+
+    &-link {
+      font-size: 1.75rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+form {
+
+  input:focus,
+  textarea:focus {
+    @include font-inter(400, 1rem, 100%, null);
+  }
+
+  .form-button_href {
+    @include font-inter(400, 1rem, 100%, #f5f5f5);
+  }
+}
+
+.studying {
+  @include font-inter(800, 1.25rem, 22px, $c-dark);
+
+  & h3 {
+    @include font-inter(700, 1.25rem, 22px, #444);
+  }
+
+  & p {
+    @include font-inter(400, 0.875rem, 1.6, #666);
+  }
+
+  @include on-tablet {
+    & h3 {
+      font-size: 1.5rem;
+      line-height: 28px;
+    }
+
+    & p {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+  }
+
+  @include on-small-desktop {
+    & h3 {
+      font-size: 1.75rem;
+      line-height: 30px;
+    }
+
+    & p {
+      font-size: 1.25rem;
+      line-height: 1.8;
+    }
+  }
+
+  @include on-desktop {
+    & h3 {
+      font-size: 2rem;
+      line-height: 36px;
+    }
+
+    & p {
+      font-size: 1.5rem;
+      line-height: 2;
+    }
+  }
+
+  @include on-large-desktop {
+    & h3 {
+      font-size: 2rem;
+      line-height: 40px;
+    }
+
+    & p {
+      font-size: 1.5rem;
+      line-height: 2.2;
+    }
+  }
+
+  @include on-extra-large {
+    & h3 {
+      font-size: 2.5rem;
+      line-height: 44px;
+    }
+
+    & p {
+      font-size: 2rem;
+      line-height: 2.5;
+    }
+  }
+
+  @include on-4k {
+    & h3 {
+      font-size: 2.5rem;
+      line-height: 44px;
+    }
+
+    & p {
+      font-size: 2rem;
+      line-height: 2.5;
+    }
+  }
+}
+
+.price_of_Lesson {
+  @include font-inter(400, 1.25rem, null, #000000);
+
+  .container_of_card {
+    &-individualLesson {
+      &_title {
+        @include font-inter(300, 1rem, null, #ffff);
+
+        @include on-tablet {
+          font-size: 1.25rem;
+        }
+
+        @include on-small-desktop {
+          font-size: 1.5rem;
+        }
+
+        @include on-desktop {
+          font-size: 1.75rem;
+        }
+
+        @include on-large-desktop {
+          font-size: 2rem;
+        }
+
+        @include on-4k {
+          font-size: 2.25rem;
+        }
+      }
+
+      &_price {
+        @include font-inter(400, 0.57rem, null, #ffff);
+
+        @include on-tablet {
+          font-size: 0.75rem;
+        }
+
+        @include on-small-desktop {
+          font-size: 0.875rem;
+        }
+
+        @include on-desktop {
+          font-size: 1rem;
+        }
+
+        @include on-large-desktop {
+          font-size: 1.125rem;
+        }
+
+        @include on-4k {
+          font-size: 1.25rem;
+        }
+
+        & span {
+          @include font-inter(500, 0.875rem, null, #ffff);
+
+          @include on-tablet {
+            font-size: 1rem;
+          }
+
+          @include on-small-desktop {
+            font-size: 1.125rem;
+          }
+
+          @include on-desktop {
+            font-size: 1.25rem;
+          }
+
+          @include on-large-desktop {
+            font-size: 1.375rem;
+          }
+
+          @include on-4k {
+            font-size: 1.5rem;
+          }
+        }
+
+        & small {
+          @include font-inter(500, 0.57rem, null, #b3b3b3);
+
+          @include on-tablet {
+            font-size: 0.75rem;
+          }
+
+          @include on-small-desktop {
+            font-size: 0.875rem;
+          }
+
+          @include on-desktop {
+            font-size: 1rem;
+          }
+
+          @include on-large-desktop {
+            font-size: 1.125rem;
+          }
+
+          @include on-4k {
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+
+    &-duetLesson {
+      &_title {
+        @include font-inter(300, 1rem, null, #ffff);
+
+        @include on-tablet {
+          font-size: 1.25rem;
+        }
+
+        @include on-small-desktop {
+          font-size: 1.5rem;
+        }
+
+        @include on-desktop {
+          font-size: 1.75rem;
+        }
+
+        @include on-large-desktop {
+          font-size: 2rem;
+        }
+
+        @include on-4k {
+          font-size: 2.25rem;
+        }
+      }
+
+      &_price {
+        @include font-inter(400, 0.57rem, null, #ffff);
+
+        @include on-tablet {
+          font-size: 0.75rem;
+        }
+
+        @include on-small-desktop {
+          font-size: 0.875rem;
+        }
+
+        @include on-desktop {
+          font-size: 1rem;
+        }
+
+        @include on-large-desktop {
+          font-size: 1.125rem;
+        }
+
+        @include on-4k {
+          font-size: 1.25rem;
+        }
+
+        & span {
+          @include font-inter(500, 0.875rem, null, #ffff);
+
+          @include on-tablet {
+            font-size: 1rem;
+          }
+
+          @include on-small-desktop {
+            font-size: 1.125rem;
+          }
+
+          @include on-desktop {
+            font-size: 1.25rem;
+          }
+
+          @include on-large-desktop {
+            font-size: 1.375rem;
+          }
+
+          @include on-4k {
+            font-size: 1.5rem;
+          }
+        }
+
+        & small {
+          @include font-inter(500, 0.57rem, null, #b3b3b3);
+
+          @include on-tablet {
+            font-size: 0.75rem;
+          }
+
+          @include on-small-desktop {
+            font-size: 0.875rem;
+          }
+
+          @include on-desktop {
+            font-size: 1rem;
+          }
+
+          @include on-large-desktop {
+            font-size: 1.125rem;
+          }
+
+          @include on-4k {
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.our_benefits {
+  @include font-inter(400, 1rem, 1rem, #000000);
+
+  &-list-item-title {
+    @include font-inter(700, 1.75rem, 30px, #fff);
+  }
+
+  .box_benefits {
+    &-item {
+      @include font-inter(400, 1rem, 1rem, #000000);
+    }
+
+    .items {
+      @include font-inter(400, 0.875rem, 19px, #fff);
+    }
+  }
+}
+
+.question {
+  &-title {
+    @include font-inter(700, 1rem, 1rem, #000000);
+
+    @include on-tablet {
+      font-size: 1.25rem;
+    }
+
+    @include on-small-desktop {
+      font-size: 1.5rem;
+    }
+
+    @include on-desktop {
+      font-size: 1.75rem;
+    }
+
+    @include on-large-desktop {
+      font-size: 2rem;
+    }
+
+    @include on-4k {
+      font-size: 2.25rem;
+    }
+  }
+
+  &-descriptions {
+    @include font-inter(500, 1rem, 20px, #000000);
+  }
+
+  &-button-link {
+    @include font-inter(600, 1rem, 22px, #fff);
+  }
+}
+
+.vacancy_of_teacher {
+  &-title {
+    @include font-inter-center(600, 1.5rem, 19px, #ffffff);
+  }
+
+  &-descriptions {
+    @include font-inter(400, 0.875rem, 15px, #ffffff);
+  }
+
+  &-button-link {
+    @include font-inter-center(600, 1rem, 22px, #ffffff);
+  }
+}
+
+.footer {
+  &_logo_descriptions {
+    @include font-inter(400, 0.875rem, 30px, #fff);
+  }
+
+  &_nav-title {
+    @include font-inter(400, 1.25rem, 30px, #fff);
+  }
+
+  &_nav_item-title {
+    @include font-inter(400, 1rem, 30px, #fff);
+  }
+
+  &_socials-title {
+    @include font-inter(400, 1.5rem, 30px, #fff);
+  }
+
+  &_contact-title {
+    @include font-inter(400, 1.5rem, 30px, #fff);
+  }
+
+  &_contact_item_link {
+    @include font-inter(200, 1rem, 30px, #fff);
+  }
+}

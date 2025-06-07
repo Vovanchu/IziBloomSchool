@@ -1,0 +1,43 @@
+@import "_vars";
+
+// Міксін для планшетів (640px - 1024px)
+@mixin on-tablet {
+  @media (min-width: #{$on-tablet}) and (max-width: #{$on-small-desktop - 1px}) {
+    @content;
+  }
+}
+
+// Міксін для маленьких десктопів (1024px - 1280px)
+@mixin on-small-desktop {
+  @media (min-width: #{$on-small-desktop}) and (max-width: #{$on-desktop - 1px}) {
+    @content;
+  }
+}
+
+// Міксін для стандартних десктопів (1280px - 1440px)
+@mixin on-desktop {
+  @media (min-width: #{$on-desktop}) and (max-width: #{$on-large-desktop - 1px}) {
+    @content;
+  }
+}
+
+// Міксін для великих десктопів (1440px - 1920px)
+@mixin on-large-desktop {
+  @media (min-width: #{$on-large-desktop}) and (max-width: #{$on-extra-large - 1px}) {
+    @content;
+  }
+}
+
+// Міксін для дуже великих екранів (1920px - 2560px)
+@mixin on-extra-large {
+  @media (min-width: #{$on-extra-large}) and (max-width: #{$on-4k - 1px}) {
+    @content;
+  }
+}
+
+// Міксін для 4K-екранів (2560px+)
+@mixin on-4k {
+  @media (min-width: #{$on-4k}) {
+    @content;
+  }
+}
