@@ -1,15 +1,16 @@
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors()); // додай це!
 app.use(bodyParser.json());
 
-// API для прийому форми
 app.post('/proxy', async (req, res) => {
   const { name, phone, message, formType, age } = req.body;
 
@@ -36,5 +37,5 @@ app.post('/proxy', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Сервер запущено на порті ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
