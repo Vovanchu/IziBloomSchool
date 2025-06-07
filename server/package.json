@@ -1,0 +1,31 @@
+{
+  "name": "izibloomschool",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d build",
+    "sass": "sass ./src/styles/main.scss ./src/styles/main.css",
+    "sass:watch": "sass --watch ./src/styles/main.scss:./src/styles/main.css",
+    "start": "node server.js",
+    "build": "react-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vovanchu/IziBloomSchool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vovanchu/IziBloomSchool/issues"
+  },
+  "homepage": "https://github.com/Vovanchu/IziBloomSchool#readme",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}
