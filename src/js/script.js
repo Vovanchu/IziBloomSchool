@@ -19,11 +19,12 @@ document.querySelectorAll('form.tg-form').forEach(form => {
     const formType = form.getAttribute('data-form-type') || 'Форма без типу';
 
     try {
-      const response = await fetch('https://www.izibloomschool.com/proxy', {
+      const response = await fetch('https://izibloomschool.onrender.com/proxy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, message, age, formType }),
       });
+
 
       const data = await response.json();
 
